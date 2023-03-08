@@ -5,6 +5,10 @@ const Home: NextPage = () => {
 	const dragons = useQuery({
 		operationName: 'Dragons',
 	});
+
+	const episodes = useQuery({
+		operationName: 'Episodes'
+	})
 	const refresh = () => {
 		dragons.mutate();
 	};
@@ -54,11 +58,11 @@ const Home: NextPage = () => {
 				<div className="w-full max-w-xl rounded-2xl bg-blue-50 px-20 py-14">
 					<div className="mx-auto flex max-w-sm flex-col items-center">
 						<p className="mt-3 mb-8 text-center text-black/80">
-							This is the result of your <code className="font-mono font-medium text-amber-500 font-bold">Dragons</code>{' '}
+							This is the result of your <code className="font-mono font-medium text-amber-500 font-bold">Episodes</code>{' '}
 							operation.
 						</p>
 						<code className="p-3" data-testid="result">
-							{JSON.stringify(dragons, null, 2)}
+							{JSON.stringify(episodes, null, 2)}
 						</code>
 					</div>
 					<div className="flex justify-center mt-8">
